@@ -11,6 +11,8 @@ import {
   DateFilterRange,
 } from '../types';
 
+import defaultShopLogo from '../assets/images/repair_shop_logo_1792729786411.jpg';
+
 const STORAGE_KEYS = {
   JOBS: 'mrsm_repair_jobs_v1',
   PAYMENTS: 'mrsm_payments_v1',
@@ -23,7 +25,7 @@ const STORAGE_KEYS = {
 
 export const DEFAULT_SETTINGS: ShopSettings = {
   shop_name: 'Al-Rehman Mobile Zone & Repairing Lab',
-  shop_logo: '/src/assets/images/repair_shop_logo_1792729786411.jpg',
+  shop_logo: defaultShopLogo,
   shop_address: 'Shop #14, Hall Road Mobile Market, Lahore, Pakistan',
   shop_phone: '+92 300 1234567',
   shop_email: 'support@alrehmanrepair.com',
@@ -280,7 +282,11 @@ export const storageService = {
     try {
       const data = localStorage.getItem(STORAGE_KEYS.SETTINGS);
       if (data) {
-        return { ...DEFAULT_SETTINGS, ...JSON.parse(data) };
+        const parsed = JSON.parse(data);
+        if (parsed.shop_logo && parsed.shop_logo.startsWith('/src/assets/images/')) {
+          parsed.shop_logo = defaultShopLogo;
+        }
+        return { ...DEFAULT_SETTINGS, ...parsed };
       }
     } catch (e) {
       console.error('Failed to load settings', e);
