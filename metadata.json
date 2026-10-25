@@ -1,0 +1,6 @@
+{
+  "name": "Mobile Repair Shop Manager",
+  "description": "Professional mobile repair shop management app for tracking repair jobs, customer intake, accessories, payments, statuses, receipts, and daily reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

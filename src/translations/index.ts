@@ -1,0 +1,322 @@
+import { LanguageCode, RepairStatus, PaymentMethod } from '../types';
+
+export const ACCESSORIES_LIST = [
+  { id: 'Battery', label: 'Battery', labelUrdu: 'بیٹری' },
+  { id: 'SIM Card', label: 'SIM Card', labelUrdu: 'سم کارڈ' },
+  { id: 'SIM Tray', label: 'SIM Tray', labelUrdu: 'سم ٹرے' },
+  { id: 'Memory Card', label: 'Memory Card', labelUrdu: 'میموری کارڈ' },
+  { id: 'Back Panel', label: 'Back Panel', labelUrdu: 'بیک پینل' },
+  { id: 'Charger', label: 'Charger', labelUrdu: 'چارجر' },
+  { id: 'Charging Cable', label: 'Charging Cable', labelUrdu: 'چارجنگ کیبل' },
+  { id: 'Mobile Cover', label: 'Mobile Cover', labelUrdu: 'موبائل کور' },
+  { id: 'Other Accessories', label: 'Other Accessories', labelUrdu: 'دیگر سامان' },
+];
+
+export const POPULAR_BRANDS = [
+  'Samsung',
+  'Apple (iPhone)',
+  'Vivo',
+  'Oppo',
+  'Xiaomi / Redmi',
+  'Infinix',
+  'Tecno',
+  'Realme',
+  'OnePlus',
+  'Huawei',
+  'Google Pixel',
+  'Motorola',
+  'Other',
+];
+
+export const COMMON_PROBLEMS = [
+  'Broken / Cracked Screen',
+  'Touch Not Working',
+  'No Display / Blank Screen',
+  'Battery Drainage / Dead Battery',
+  'Charging Port Issue / Not Charging',
+  'No Power / Completely Dead',
+  'Water Damaged',
+  'Speaker / Mic Not Working',
+  'Network / SIM Not Detecting',
+  'Camera Blurry / Broken Glass',
+  'Software / Boot Loop / Restart',
+];
+
+export const DEVICE_CONDITIONS = [
+  'Minor Scratches (Normal Wear)',
+  'Heavy Scratches / Dented Body',
+  'Cracked Glass / Back Damaged',
+  'Previously Opened / Repaired',
+  'Clean / Like New',
+  'Severe Damage / Bent Frame',
+];
+
+export const CURRENCY_SYMBOLS: Record<string, string> = {
+  PKR: 'Rs.',
+  USD: '$',
+  INR: '₹',
+  AED: 'AED',
+  SAR: 'SAR',
+  EUR: '€',
+  GBP: '£',
+};
+
+export const STATUS_LABELS: Record<RepairStatus, { en: string; ur: string }> = {
+  pending: { en: 'Pending', ur: 'زیر التواء' },
+  in_progress: { en: 'In Progress', ur: 'کام جاری ہے' },
+  waiting_for_parts: { en: 'Waiting for Parts', ur: 'پارٹس کا انتظار' },
+  repaired: { en: 'Repaired', ur: 'مرمت شدہ' },
+  ready_for_delivery: { en: 'Ready for Delivery', ur: 'تیار برائے واپسی' },
+  delivered: { en: 'Delivered', ur: 'واپس کر دیا گیا' },
+  unrepairable: { en: 'Unrepairable', ur: 'ناقابل مرمت' },
+  cancelled: { en: 'Cancelled', ur: 'منسوخ' },
+};
+
+export const PAYMENT_METHOD_LABELS: Record<PaymentMethod, { en: string; ur: string }> = {
+  cash: { en: 'Cash', ur: 'نقد (کیش)' },
+  bank_transfer: { en: 'Bank Transfer', ur: 'بینک ٹرانسفر' },
+  jazzcash: { en: 'JazzCash', ur: 'جاز کیش' },
+  easypaisa: { en: 'Easypaisa', ur: 'ایزی پیسہ' },
+  other: { en: 'Other', ur: 'دیگر' },
+};
+
+export const TRANSLATIONS = {
+  en: {
+    appTitle: 'Mobile Repair Shop Manager',
+    dashboard: 'Dashboard',
+    addCustomer: 'Add Job',
+    repairHistory: 'Repair History',
+    payments: 'Payments',
+    reports: 'Reports',
+    settings: 'Settings',
+    searchPlaceholder: 'Search customer, phone, model, IMEI, Job ID...',
+    newJob: 'New Repair Job',
+
+    // Dashboard
+    statsTotalReceived: 'Total Mobiles Received',
+    statsTotalRepaired: 'Total Repaired Mobiles',
+    statsPendingRepairs: 'Pending Repairs',
+    statsReadyForDelivery: 'Ready for Delivery',
+    statsTotalDelivered: 'Total Delivered',
+    statsTotalAmount: 'Total Repairing Amount',
+    statsTotalReceivedMoney: 'Total Payments Received',
+    statsTotalBalance: 'Total Outstanding Balance',
+
+    // Date Filters
+    today: 'Today',
+    yesterday: 'Yesterday',
+    thisWeek: 'This Week',
+    thisMonth: 'This Month',
+    lastMonth: 'Last Month',
+    thisYear: 'This Year',
+    customRange: 'Custom Range',
+
+    // Job Intake Form
+    customerDetails: 'Customer Details',
+    customerName: 'Customer Name',
+    mobileNumber: 'Mobile Number',
+    additionalNumber: 'Additional Number (Optional)',
+    customerAddress: 'Shop / Customer Address (Optional)',
+    phoneDetails: 'Mobile Phone Details',
+    mobileBrand: 'Mobile Brand',
+    mobileModel: 'Mobile Model',
+    imeiNumber: 'IMEI Number (Optional)',
+    deviceProblem: 'Device Problem / Fault',
+    deviceCondition: 'Device Physical Condition',
+    receivedDate: 'Received Date',
+    receivedTime: 'Received Time',
+    expectedDeliveryDate: 'Expected Delivery Date (Optional)',
+    accessoriesReceived: 'Mobile Accessories Received',
+    otherAccessoryNote: 'Specify Other Accessories',
+
+    // Financials
+    repairCharges: 'Repairing Cost & Payment',
+    totalCost: 'Total Repairing Cost',
+    advancePayment: 'Advance Payment',
+    remainingBalance: 'Remaining Balance',
+    paymentMethod: 'Payment Method',
+    paymentNotes: 'Payment Notes',
+    saveJob: 'Save Repair Job & Generate Receipt',
+    saving: 'Saving...',
+
+    // Statuses
+    status: 'Repair Status',
+    paymentStatus: 'Payment Status',
+    unpaid: 'Unpaid',
+    partiallyPaid: 'Partially Paid',
+    fullyPaid: 'Fully Paid',
+
+    // Actions & Buttons
+    viewReceipt: 'View Receipt',
+    printReceipt: 'Print Receipt',
+    shareWhatsApp: 'Share on WhatsApp',
+    addPayment: 'Add Payment',
+    markDelivered: 'Mark as Delivered',
+    editJob: 'Edit Job',
+    cancel: 'Cancel',
+    saveChanges: 'Save Changes',
+    confirm: 'Confirm',
+    delete: 'Delete',
+    exportCsv: 'Export CSV',
+    printReport: 'Print Report',
+
+    // Delivery Modal
+    deliveredTo: 'Delivered To (Name)',
+    deliveredBy: 'Delivered By (Technician)',
+    finalPayment: 'Final Payment Collected',
+    deliveryNotes: 'Delivery Notes',
+    confirmDelivery: 'Complete Delivery',
+
+    // History & Search
+    jobId: 'Job ID',
+    customer: 'Customer',
+    device: 'Device',
+    cost: 'Cost',
+    paid: 'Paid',
+    balance: 'Balance',
+    actions: 'Actions',
+    allStatuses: 'All Statuses',
+    allPayments: 'All Payments',
+    newestFirst: 'Newest First',
+    oldestFirst: 'Oldest First',
+    highestCost: 'Highest Cost',
+    lowestCost: 'Lowest Cost',
+    noJobsFound: 'No repair jobs found matching criteria.',
+
+    // Settings
+    shopInfo: 'Shop Information',
+    shopName: 'Shop Name',
+    shopLogo: 'Shop Logo',
+    shopAddress: 'Shop Address',
+    shopPhone: 'Shop Phone / WhatsApp',
+    shopEmail: 'Shop Email',
+    receiptFooterMessage: 'Receipt Footer Terms & Policy',
+    currencySettings: 'Currency Settings',
+    languageSettings: 'Language',
+    themeSettings: 'Theme',
+    backupRestore: 'Data Backup & Restore',
+    backupBtn: 'Export Backup (JSON)',
+    restoreBtn: 'Restore Backup (JSON)',
+    loadSampleData: 'Load Demo Sample Data',
+    sampleDataNote: 'Populate sample jobs and payments to test the workflow.',
+  },
+  ur: {
+    appTitle: 'موبائل ریپیئر شاپ مینیجر',
+    dashboard: 'ڈیش بورڈ',
+    addCustomer: 'نیا کام شامل کریں',
+    repairHistory: 'مرمت کی تفصیل',
+    payments: 'ادائیگیاں',
+    reports: 'رپورٹس',
+    settings: 'ترتیبات',
+    searchPlaceholder: 'گاہک، فون، ماڈل، جاب آئی ڈی تلاش کریں...',
+    newJob: 'نیا مرمتی اندراج',
+
+    // Dashboard
+    statsTotalReceived: 'کل موصولہ موبائلز',
+    statsTotalRepaired: 'کل مرمت شدہ موبائلز',
+    statsPendingRepairs: 'زیر التواء موبائلز',
+    statsReadyForDelivery: 'واپسی کیلئے تیار',
+    statsTotalDelivered: 'گاہک کو واپس شدہ',
+    statsTotalAmount: 'کل متوقع رقم',
+    statsTotalReceivedMoney: 'کل وصول شدہ رقم',
+    statsTotalBalance: 'کل بقایا رقم',
+
+    // Date Filters
+    today: 'آج',
+    yesterday: 'کل (گزشتہ)',
+    thisWeek: 'اس ہفتے',
+    thisMonth: 'اس ماہ',
+    lastMonth: 'گزشتہ ماہ',
+    thisYear: 'اس سال',
+    customRange: 'مخصوص تاریخ',
+
+    // Job Intake Form
+    customerDetails: 'گاہک کی تفصیلات',
+    customerName: 'گاہک کا نام',
+    mobileNumber: 'موبائل نمبر',
+    additionalNumber: 'دوسرا رابطہ نمبر (اختیاری)',
+    customerAddress: 'گاہک کا پتہ (اختیاری)',
+    phoneDetails: 'موبائل فون کی تفصیلات',
+    mobileBrand: 'موبائل برانڈ / کمپنی',
+    mobileModel: 'موبائل ماڈل',
+    imeiNumber: 'آئی ایم ای آئی (IMEI نمبر)',
+    deviceProblem: 'موبائل کی خرابی / مسئلہ',
+    deviceCondition: 'فون کی ظاہری حالت',
+    receivedDate: 'وصولی کی تاریخ',
+    receivedTime: 'وصولی کا وقت',
+    expectedDeliveryDate: 'واپسی کی متوقع تاریخ',
+    accessoriesReceived: 'موبائل کے ساتھ موصولہ سامان',
+    otherAccessoryNote: 'دیگر سامان کی تفصیل',
+
+    // Financials
+    repairCharges: 'مرمت کے اخراجات و ادائیگیاں',
+    totalCost: 'کل طے شدہ چارجز',
+    advancePayment: 'ایڈوانس وصولی',
+    remainingBalance: 'بقایا رقم',
+    paymentMethod: 'ادائیگی کا ذریعہ',
+    paymentNotes: 'نوٹس',
+    saveJob: 'محفوظ کریں اور رسید بنائیں',
+    saving: 'محفوظ ہو رہا ہے...',
+
+    // Statuses
+    status: 'مرمت کی حالت',
+    paymentStatus: 'ادائیگی کی حالت',
+    unpaid: 'غیر ادا شدہ',
+    partiallyPaid: 'کچھ ادا شدہ',
+    fullyPaid: 'مکمل ادا شدہ',
+
+    // Actions & Buttons
+    viewReceipt: 'رسید دیکھیں',
+    printReceipt: 'رسید پرنٹ کریں',
+    shareWhatsApp: 'واٹس ایپ پر بھیجیں',
+    addPayment: 'ادائیگی شامل کریں',
+    markDelivered: 'واپسی درج کریں',
+    editJob: 'تبدیلی کریں',
+    cancel: 'منسوخ',
+    saveChanges: 'تبدیلی محفوظ کریں',
+    confirm: 'تصدیق کریں',
+    delete: 'حذف کریں',
+    exportCsv: 'ایکسپورٹ CSV',
+    printReport: 'رپورٹ پرنٹ کریں',
+
+    // Delivery Modal
+    deliveredTo: 'کس کے حوالے کیا گیا',
+    deliveredBy: 'کس نے حوالہ کیا (کاریگر)',
+    finalPayment: 'آخری وصول شدہ رقم',
+    deliveryNotes: 'حوالگی کے نوٹس',
+    confirmDelivery: 'حوالگی مکمل کریں',
+
+    // History & Search
+    jobId: 'جاب نمبر',
+    customer: 'گاہک',
+    device: 'موبائل',
+    cost: 'خرچ',
+    paid: 'وصول',
+    balance: 'بقایا',
+    actions: 'اقدامات',
+    allStatuses: 'تمام حالتیں',
+    allPayments: 'تمام ادائیگیاں',
+    newestFirst: 'تازہ ترین پہلے',
+    oldestFirst: 'پرانے پہلے',
+    highestCost: 'زیادہ رقم پہلے',
+    lowestCost: 'کم رقم پہلے',
+    noJobsFound: 'کوئی ریکارڈ نہیں ملا۔',
+
+    // Settings
+    shopInfo: 'دکان کی تفصیلات',
+    shopName: 'دکان کا نام',
+    shopLogo: 'دکان کا لوگو',
+    shopAddress: 'دکان کا پتہ',
+    shopPhone: 'فون / واٹس ایپ نمبر',
+    shopEmail: 'ای میل پتہ',
+    receiptFooterMessage: 'رسید پر شرائط و ضوابط',
+    currencySettings: 'کرنسی',
+    languageSettings: 'زبان منتخب کریں',
+    themeSettings: 'تھیم',
+    backupRestore: 'ڈیٹا بیک اپ اور بحالی',
+    backupBtn: 'بیک اپ فائل محفوظ کریں (JSON)',
+    restoreBtn: 'بیک اپ فائل بحال کریں (JSON)',
+    loadSampleData: 'ڈیمو ڈیٹا لوڈ کریں',
+    sampleDataNote: 'چیک کرنے کیلئے فرضی موبائل ریکارڈز شامل کریں۔',
+  },
+};
